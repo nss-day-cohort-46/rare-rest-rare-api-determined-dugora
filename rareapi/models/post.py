@@ -8,7 +8,7 @@ class Post(models.Model):
     title=models.CharField(max_length=50)
     publication_date=models.DateTimeField(default=now)
     image_url=models.ImageField()
-    content=models.CharField(max_length=50)
+    content=models.TextField()
     approved=models.BooleanField()
     tags=models.ManyToManyField("Tag", through="PostTag", related_name="posts")
     reactions=models.ManyToManyField("Reaction", through="PostReaction", related_name="posts")
