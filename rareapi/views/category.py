@@ -81,9 +81,9 @@ class CategoryView(ViewSet):
         categories = Category.objects.all()
 
         # Support filtering categories
-        cateogory = self.request.query_params.get('categoryId', None)
+        category = self.request.query_params.get('categoryId', None)
         if category is not None:
-            categories = categories.filter(category__id=cateogory)    
+            categories = categories.filter(category__id=category)    
 
         serializer = CategorySerializer(
             categories, many=True, context={'request': request})
@@ -95,10 +95,8 @@ class CategoryView(ViewSet):
 class CategorySerializer(serializers.ModelSerializer):
         """JSON serializer for categories
 
-        Arguments:
-         serializer type
-        """
-class Meta:
-        model = Category
-        fields = ('id', 'label')
-        depth = 1    
+        Arguments:serializer type """
+        class Meta:
+            model = Category
+            fields = ('id', 'label')
+            depth = 1    
