@@ -13,7 +13,7 @@
 ```
 git fetch —all
 git checkout 
-serve
+npm start
 
 ```
 
