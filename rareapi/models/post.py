@@ -2,6 +2,7 @@ from rareapi.models.posttag import PostTag
 from django.db import models
 from django.db.models.deletion import CASCADE, DO_NOTHING
 from django.utils.timezone import now
+
 class Post(models.Model):
     user=models.ForeignKey("RareUser", on_delete=CASCADE)
     category=models.ForeignKey("Category", on_delete=DO_NOTHING)
