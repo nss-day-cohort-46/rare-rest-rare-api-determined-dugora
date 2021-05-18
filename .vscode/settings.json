@@ -1,4 +1,5 @@
 {
     "python.linting.pylintEnabled": true,
-    "python.pythonPath": "/Users/madisonpowell/.local/share/virtualenvs/rare-rest-2nocshDt/bin/python"
+    "python.pythonPath": "/Users/madisonpowell/.local/share/virtualenvs/rare-rest-2nocshDt/bin/python",
+    "python.linting.enabled": false
 }
