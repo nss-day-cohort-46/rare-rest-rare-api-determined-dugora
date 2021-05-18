@@ -1,5 +1,13 @@
 {
     "python.linting.pylintEnabled": true,
     "python.pythonPath": "/Users/madisonpowell/.local/share/virtualenvs/rare-rest-2nocshDt/bin/python",
-    "python.linting.enabled": false
+    "python.linting.enabled": false,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "Rare Database",
+            "database": "db.sqlite3"
+        }
+    ]
 }
