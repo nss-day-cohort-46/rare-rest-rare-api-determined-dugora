@@ -17,13 +17,17 @@ from django.conf.urls import include
 from django.urls import path
 from rest_framework import routers
 from rareapi.views import PostViewSet
+from django.contrib import admin
+from rareapi.views import login_user, register_user
 
 
 router = routers.DefaultRouter(trailing_slash=False)
-
 router.register(r'posts', PostViewSet, 'post')
 
 urlpatterns = [
     path('api-auth', include('rest_framework.urls', namespace='rest_framework')),
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('admin/', admin.site.urls),
+    path('register', register_user),
+    path('login', login_user),
 ]
