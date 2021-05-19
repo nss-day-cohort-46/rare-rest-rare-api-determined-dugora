@@ -6,7 +6,7 @@
         {
             "previewLimit": 50,
             "driver": "SQLite",
-            "name": "Rare Database",
+            "name": "RareDatabse",
             "database": "db.sqlite3"
         }
     ]
