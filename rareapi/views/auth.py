@@ -10,7 +10,7 @@ from datetime import datetime
 
 @csrf_exempt
 def register_user(request):
-    '''Handles the creation of a new gamer for authentication
+    '''Handles the authentication of a gamer
 
     Method arguments:
       request -- The full HTTP request object
@@ -29,7 +29,7 @@ def register_user(request):
         password=req_body['password']
     )
 
-    # Now save the extra info in the levelupapi_gamer table
+    # Now save the extra info in the rareapi_rareUser table
     rare_user = RareUser.objects.create(
         bio=req_body['bio'],
         profile_image_url=req_body['profile_image_url'],
@@ -47,3 +47,32 @@ def register_user(request):
     # Return the token to the client
     data = json.dumps({"valid": True, "token": token.key})
     return HttpResponse(data, content_type='application/json')
+
+
+@csrf_exempt
+def login_user(request):
+    '''Handles the authentication of a gamer
+
+    Method arguments:
+      request -- The full HTTP request object
+    '''
+    req_body = json.loads(request.body.decode())
+
+    # If the request is a HTTP POST, try to pull out the relevant information.
+    if request.method == 'POST':
+
+        # Use the built-in authenticate method to verify
+        email = req_body['email']
+        password = req_body['password']
+        authenticated_user = authenticate(username=email, password=password)
+
+        # If authentication was successful, respond with their token
+        if authenticated_user is not None:
+            token = Token.objects.get(user=authenticated_user)
+            data = json.dumps({"valid": True, "token": token.key})
+            return HttpResponse(data, content_type='application/json')
+
+        else:
+            # Bad login details were provided. So we can't log the user in.
+            data = json.dumps({"valid": False})
+            return HttpResponse(data, content_type='application/json')
