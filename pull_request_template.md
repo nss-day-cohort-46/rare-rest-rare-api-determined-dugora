@@ -13,8 +13,6 @@
 ```
 git fetch —all
 git checkout 
-npm start
-
 ```
 
 # Checklist:
