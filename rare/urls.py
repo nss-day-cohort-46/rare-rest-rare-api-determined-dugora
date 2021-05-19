@@ -26,7 +26,9 @@ from rareapi.views.category import CategoryView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'posts', Posts, 'post')
+router.register(r'', Posts, 'post')
 router.register(r'categories', CategoryView, 'category')
+
 
 urlpatterns = [
     path('', include(router.urls)),
