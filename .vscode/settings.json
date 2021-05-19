@@ -1,12 +1,12 @@
 {
     "python.linting.pylintEnabled": true,
-    "python.pythonPath": "/Users/brittneypotts/.local/share/virtualenvs/rare-rest-rare-api-determined-dugora-j9-dR6Dd/bin/python",
+    "python.pythonPath": "/home/tracyd/.local/share/virtualenvs/rare-rest-rare-api-determined-dugora-cJ6NBRpD/bin/python",
     "python.linting.enabled": false,
     "sqltools.connections": [
         {
             "previewLimit": 50,
             "driver": "SQLite",
-            "name": "RareDatabse",
+            "name": "rare server",
             "database": "db.sqlite3"
         }
     ]
