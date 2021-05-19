@@ -19,10 +19,14 @@ from rest_framework import routers
 from rareapi.views import PostViewSet
 from django.contrib import admin
 from rareapi.views import login_user, register_user
+from rareapi.models.category import Category
+from rareapi.views.category import CategoryView
 
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'posts', PostViewSet, 'post')
+router.register(r'categories', CategoryView, 'category')
+
 
 urlpatterns = [
     path('api-auth', include('rest_framework.urls', namespace='rest_framework')),
