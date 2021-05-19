@@ -10,7 +10,7 @@ from datetime import datetime
 
 @csrf_exempt
 def register_user(request):
-    '''Handles the authentication of a gamer
+    '''Handles the authentication of a rareuser
 
     Method arguments:
       request -- The full HTTP request object
@@ -51,7 +51,7 @@ def register_user(request):
 
 @csrf_exempt
 def login_user(request):
-    '''Handles the authentication of a gamer
+    '''Handles the authentication of a rareuser
 
     Method arguments:
       request -- The full HTTP request object
