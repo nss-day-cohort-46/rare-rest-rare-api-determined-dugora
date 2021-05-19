@@ -29,11 +29,6 @@ class CategoryView(ViewSet):
         category = Category()
         category.label = request.data["label"]
        
-
-        # Use the Django ORM to get the record from the database
-        # whose `id` is what the client passed as the
-        # `categoryId` in the body of the request. NOT SURE ABT THIS??
-        category = Category.objects.get(pk=request.data["categoryId"])
         
 
         # Try to save the new game to the database, then
