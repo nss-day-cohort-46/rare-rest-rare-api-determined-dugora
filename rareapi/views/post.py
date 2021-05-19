@@ -17,8 +17,8 @@ class PostViewSet(ViewSet):
         """
         # Get the current authenticated user
         rare_user = RareUser.objects.get(user=request.auth.user)
-        posts = Post.objects.all()
-        posts.order_by('-publication_date')
+        posts = Post.objects.order_by('-publication_date')
+        
 
         # Support filtering posts by game
         if rare_user is not None:

@@ -11,5 +11,44 @@
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pharetra vel turpis nunc eget lorem dolor. Et pharetra pharetra massa massa ultricies mi quis hendrerit. Nunc sed blandit libero volutpat sed. Enim sit amet venenatis urna cursus eget nunc scelerisque. Convallis a cras semper auctor neque vitae tempus. Euismod lacinia at quis risus sed vulputate odio. Turpis egestas maecenas pharetra convallis posuere. Vulputate ut pharetra sit amet aliquam id diam. Ultricies integer quis auctor elit. Habitant morbi tristique senectus et netus et malesuada. Gravida neque convallis a cras semper auctor. Nunc scelerisque viverra mauris in aliquam sem fringilla ut. Metus vulputate eu scelerisque felis imperdiet proin. Eu mi bibendum neque egestas congue quisque egestas. Sed viverra ipsum nunc aliquet bibendum enim.            ",
             "approved": 1
         }
+    },
+    {
+        "model": "rareapi.post",
+        "pk": 2,
+        "fields": {
+            "user": 1,
+            "category": 1,
+            "title": "Django Rocks 2",
+            "publication_date": "2021-08-28T14:51:39.989Z",
+            "image_url": "https://pythondevs.org/wp-content/uploads/2020/04/why_django_is_the_best_web_framework_for_your_project_2_image_1.png",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pharetra vel turpis nunc eget lorem dolor. Et pharetra pharetra massa massa ultricies mi quis hendrerit. Nunc sed blandit libero volutpat sed. Enim sit amet venenatis urna cursus eget nunc scelerisque. Convallis a cras semper auctor neque vitae tempus. Euismod lacinia at quis risus sed vulputate odio. Turpis egestas maecenas pharetra convallis posuere. Vulputate ut pharetra sit amet aliquam id diam. Ultricies integer quis auctor elit. Habitant morbi tristique senectus et netus et malesuada. Gravida neque convallis a cras semper auctor. Nunc scelerisque viverra mauris in aliquam sem fringilla ut. Metus vulputate eu scelerisque felis imperdiet proin. Eu mi bibendum neque egestas congue quisque egestas. Sed viverra ipsum nunc aliquet bibendum enim.            ",
+            "approved": 1
+        }
+    },
+    {
+        "model": "rareapi.post",
+        "pk": 3,
+        "fields": {
+            "user": 1,
+            "category": 1,
+            "title": "Django Rocks",
+            "publication_date": "2022-08-28T14:51:39.989Z",
+            "image_url": "https://pythondevs.org/wp-content/uploads/2020/04/why_django_is_the_best_web_framework_for_your_project_2_image_1.png",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pharetra vel turpis nunc eget lorem dolor. Et pharetra pharetra massa massa ultricies mi quis hendrerit. Nunc sed blandit libero volutpat sed. Enim sit amet venenatis urna cursus eget nunc scelerisque. Convallis a cras semper auctor neque vitae tempus. Euismod lacinia at quis risus sed vulputate odio. Turpis egestas maecenas pharetra convallis posuere. Vulputate ut pharetra sit amet aliquam id diam. Ultricies integer quis auctor elit. Habitant morbi tristique senectus et netus et malesuada. Gravida neque convallis a cras semper auctor. Nunc scelerisque viverra mauris in aliquam sem fringilla ut. Metus vulputate eu scelerisque felis imperdiet proin. Eu mi bibendum neque egestas congue quisque egestas. Sed viverra ipsum nunc aliquet bibendum enim.            ",
+            "approved": 1
+        }
+    },
+    {
+        "model": "rareapi.post",
+        "pk": 4,
+        "fields": {
+            "user": 2,
+            "category": 1,
+            "title": "Django Rocks",
+            "publication_date": "2021-09-28T14:51:39.989Z",
+            "image_url": "https://pythondevs.org/wp-content/uploads/2020/04/why_django_is_the_best_web_framework_for_your_project_2_image_1.png",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pharetra vel turpis nunc eget lorem dolor. Et pharetra pharetra massa massa ultricies mi quis hendrerit. Nunc sed blandit libero volutpat sed. Enim sit amet venenatis urna cursus eget nunc scelerisque. Convallis a cras semper auctor neque vitae tempus. Euismod lacinia at quis risus sed vulputate odio. Turpis egestas maecenas pharetra convallis posuere. Vulputate ut pharetra sit amet aliquam id diam. Ultricies integer quis auctor elit. Habitant morbi tristique senectus et netus et malesuada. Gravida neque convallis a cras semper auctor. Nunc scelerisque viverra mauris in aliquam sem fringilla ut. Metus vulputate eu scelerisque felis imperdiet proin. Eu mi bibendum neque egestas congue quisque egestas. Sed viverra ipsum nunc aliquet bibendum enim.            ",
+            "approved": 1
+        }
     }
 ]
