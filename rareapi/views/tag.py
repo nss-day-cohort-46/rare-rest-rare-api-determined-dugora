@@ -93,6 +93,17 @@ class TagView(ViewSet):
         
         tag.label = request.data["label"]
 
+        # ?????WHAT WOULD THIS BE FOR TAG????
+        # gametype = GameType.objects.get(pk=request.data["gameTypeId"])
+        # game.type_of_game = gametype
+
+        try:
+            tag.save()
+        except ValidationError as ex:
+            return Response({'reason': ex.message}, status=status.HTTP_400_BAD_REQUEST)
+
+        return Response({}, status=status.HTTP_204_NO_CONTENT)
+
 class TagSerializer(serializers.ModelSerializer):
     """JSON serializer for games
 
