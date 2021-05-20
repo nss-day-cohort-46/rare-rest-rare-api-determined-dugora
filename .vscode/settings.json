@@ -1,6 +1,6 @@
 {
     "python.linting.pylintEnabled": true,
-    "python.pythonPath": "/home/harlin/.local/share/virtualenvs/rare-rest-rare-api-determined-dugora-tz9cujOv/bin/python",
+    "python.pythonPath": "/Users/brittneypotts/.local/share/virtualenvs/rare-rest-rare-api-determined-dugora-j9-dR6Dd/bin/python",
     "python.linting.enabled": false,
     "sqltools.connections": [
         {
