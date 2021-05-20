@@ -49,11 +49,12 @@ class PostViewSet(ViewSet):
         post.title = request.data["title"]
         post.image_url = request.data["image_url"]
         post.content = request.data["content"]
-        post.tags.set()
+        post.approved = True
         # post.publication_date = currentdate
 
         try:
             post.save()
+            post.tags.set(request.data.get("tags", []))
             serializer = PostSerializer(post, context={'request': request})
             return Response(serializer.data)
 
