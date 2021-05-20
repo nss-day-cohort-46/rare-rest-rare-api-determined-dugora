@@ -21,7 +21,8 @@ class PostViewSet(ViewSet):
         
 
         # Support filtering posts by game
-        if rare_user is not None:
+        current_user = self.request.query_params.get('rareuser', None)
+        if current_user is not None:
             posts = posts.filter(user=rare_user)
 
         serializer = PostSerializer(
