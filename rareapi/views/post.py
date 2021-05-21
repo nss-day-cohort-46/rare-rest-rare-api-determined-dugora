@@ -7,7 +7,7 @@ from rest_framework.decorators import action
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
-from rareapi.models import Post, RareUser
+from rareapi.models import Post, Category, RareUser
 
 
 class PostViewSet(ViewSet):
@@ -40,6 +40,38 @@ class PostViewSet(ViewSet):
             return Response(serializer.data)
         except Exception as ex:
             return HttpResponseServerError(ex)
+
+    def create(self, request):
+        """Handle POST operations
+
+        Returns:
+            Response -- JSON serialized post instance
+        """
+
+        # Uses the token passed in the `Authorization` header
+        rareuser = RareUser.objects.get(user=request.auth.user)
+        category = Category.objects.get(pk=request.data["categoryId"])
+
+        # Create a new Python instance of the Post class
+        # and set its properties from what was sent in the
+        # body of the request from the client.
+        post = Post()
+        post.user = rareuser
+        post.category = category
+        post.title = request.data["title"]
+        post.image_url = request.data["image_url"]
+        post.content = request.data["content"]
+        post.approved = True
+        # post.publication_date = currentdate
+
+        try:
+            post.save()
+            post.tags.set(request.data.get("tags", []))
+            serializer = PostSerializer(post, context={'request': request})
+            return Response(serializer.data)
+
+        except ValidationError as ex:
+            return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class PostUserSerializer(serializers.ModelSerializer):
