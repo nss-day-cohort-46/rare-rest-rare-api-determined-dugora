@@ -1,5 +1,5 @@
-"""rare URL Configuration
-
+"""
+rare URL Configuration
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
@@ -25,7 +25,6 @@ from rareapi.views.category import CategoryView
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'posts', PostViewSet, 'post')
-router.register(r'', PostViewSet, 'post')
 router.register(r'categories', CategoryView, 'category')
 
 

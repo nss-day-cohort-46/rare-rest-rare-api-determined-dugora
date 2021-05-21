@@ -4,7 +4,7 @@ from django.db.models.deletion import CASCADE, DO_NOTHING
 from django.utils.timezone import now
 
 class Post(models.Model):
-    user=models.ForeignKey("RareUser", on_delete=CASCADE)
+    user=models.ForeignKey("RareUser", on_delete=DO_NOTHING)
     category=models.ForeignKey("Category", on_delete=DO_NOTHING)
     title=models.CharField(max_length=50)
     publication_date=models.DateTimeField(default=now)
