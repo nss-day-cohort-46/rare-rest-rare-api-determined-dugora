@@ -9,6 +9,7 @@ from rest_framework.response import Response
 from rest_framework import serializers
 from rareapi.models import Post, Category, RareUser
 
+
 class PostViewSet(ViewSet):
     def list(self, request):
         """Handle GET requests to events resource
@@ -18,7 +19,6 @@ class PostViewSet(ViewSet):
         # Get the current authenticated user
         rare_user = RareUser.objects.get(user=request.auth.user)
         posts = Post.objects.order_by('-publication_date')
-        
 
         # Support filtering posts by user
         current_user = self.request.query_params.get('rareuser', None)
@@ -45,6 +45,18 @@ class PostViewSet(ViewSet):
 
         except Exception as ex:
             return Response({'message': ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            
+    def retrieve(self, request, pk=None):
+        """Handle GET requests for single post
+        Returns:
+            Response -- JSON serialized game instance
+        """
+        try:
+            post = Post.objects.get(pk=pk)
+            serializer = PostSerializer(post, context={'request': request})
+            return Response(serializer.data)
+        except Exception as ex:
+            return HttpResponseServerError(ex)
 
     def create(self, request):
         """Handle POST operations
@@ -78,12 +90,13 @@ class PostViewSet(ViewSet):
         except ValidationError as ex:
             return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
 
-            
+
 class PostUserSerializer(serializers.ModelSerializer):
     """JSON serializer for event organizer's related Django user"""
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'email', 'id']
+
 
 class PostRareUserSerializer(serializers.ModelSerializer):
     """JSON serializer for event organizer"""
@@ -92,6 +105,7 @@ class PostRareUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = RareUser
         fields = ['user']
+
 
 class PostSerializer(serializers.ModelSerializer):
     """JSON serializer for events"""
